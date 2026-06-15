@@ -70,31 +70,31 @@ export default function StaffPageContent({
                 </h2>
 
                 {/* 監修 */}
-                <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
-                  {locale === "ja" ? "監修" : "Supervision"}
-                </p>
-                <div className="space-y-2 mb-6">
+                <div className="space-y-3 mb-6">
                   {staffData.videoTeam.supervisor.map((member, index) => (
-                    <p key={index} className="text-lg font-light text-[var(--color-foreground)]">
-                      {member.name}
-                    </p>
+                    <div key={index} className="flex justify-between items-baseline text-sm">
+                      <span className="text-[var(--color-foreground)]">{member.name}</span>
+                      <span className="text-[10px] text-[var(--color-muted-foreground)]">
+                        {locale === "ja" ? "監修" : "Supervision"}
+                      </span>
+                    </div>
                   ))}
                 </div>
 
                 {/* 参加メンバー */}
-                <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
-                  {locale === "ja" ? "参加メンバー" : "Team Members"}
-                </p>
-                <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+                <div className="space-y-3 mb-6">
                   {staffData.videoTeam.members.map((member, index) => (
-                    <p key={index} className="text-sm text-[var(--color-foreground)]">
-                      {member.name}
-                    </p>
+                    <div key={index} className="flex justify-between items-baseline text-sm">
+                      <span className="text-[var(--color-foreground)]">{member.name}</span>
+                      <span className="text-[10px] text-[var(--color-muted-foreground)]">
+                        {locale === "ja" ? "参加メンバー" : "Team Member"}
+                      </span>
+                    </div>
                   ))}
                 </div>
 
                 {/* サポート・題字 */}
-                <div className="space-y-3 pt-6 border-t border-[var(--color-border)]">
+                <div className="space-y-3 pt-4 border-t border-[var(--color-border)]">
                   {staffData.videoTeam.support.map((member, index) => (
                     <div key={index} className="flex justify-between items-baseline text-sm">
                       <span className="text-[var(--color-foreground)]">{member.name}</span>
@@ -122,13 +122,15 @@ export default function StaffPageContent({
                 </h2>
                 
                 {/* 音楽監修 */}
-                <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
-                  {locale === "ja" ? "音楽監修" : "Music Supervisor"}
-                </p>
-                <div className="flex justify-between items-baseline mb-6">
-                  <p className="text-sm font-light text-[var(--color-foreground)]">
-                    {staffData.musicTeam.supervisor[0]?.name}
-                  </p>
+                <div className="space-y-3 mb-6">
+                  {staffData.musicTeam.supervisor.map((member, index) => (
+                    <div key={index} className="flex justify-between items-baseline text-sm">
+                      <span className="text-[var(--color-foreground)]">{member.name}</span>
+                      <span className="text-[10px] text-[var(--color-muted-foreground)]">
+                        {locale === "ja" ? "音楽監修" : "Music Supervisor"}
+                      </span>
+                    </div>
+                  ))}
                 </div>
 
                 {/* 制作メンバー */}
