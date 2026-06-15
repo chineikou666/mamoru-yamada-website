@@ -66,10 +66,6 @@ export default function StaffPageContent({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
               {/* 映像制作 */}
               <div>
-                <h2 className="text-sm font-light text-[var(--color-foreground)] tracking-[0.1em] mb-6">
-                  {locale === "ja" ? staffData.videoTeam.title : staffData.videoTeam.titleEn}
-                </h2>
-                
                 {/* 監修 */}
                 <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
                   {locale === "ja" ? "監修" : "Supervision"}
@@ -116,8 +112,8 @@ export default function StaffPageContent({
 
               {/* 音楽制作 */}
               <div>
-                <h2 className="text-xs sm:text-sm font-light text-[var(--color-foreground)] tracking-[0.05em] sm:tracking-[0.1em] mb-6">
-                  <span className="block">{locale === "ja" ? "山田守ドキュメンタリ映画" : "Mamoru Yamada Documentary Film"}</span>
+                <h2 className="text-[11px] sm:text-xs md:text-sm font-light text-[var(--color-foreground)] tracking-[0.02em] sm:tracking-[0.05em] md:tracking-[0.1em] mb-6 leading-relaxed">
+                  <span className="block mb-1">{locale === "ja" ? "山田守ドキュメンタリ映画" : "Mamoru Yamada Documentary Film"}</span>
                   <span className="block">{locale === "ja" ? "音楽制作チームのクレジット" : "Music Production Team Credits"}</span>
                 </h2>
                 

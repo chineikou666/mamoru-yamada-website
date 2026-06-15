@@ -5,8 +5,6 @@ import StaffPageContent from "@/components/StaffPageContent";
 const staffData = {
   // 映像制作团队
   videoTeam: {
-    title: "山田守ドキュメンタリープロジェクト",
-    titleEn: "Mamoru Yamada Documentary Project",
     supervisor: [
       { name: "瀧 健太郎", role: "監修", roleEn: "Supervision" },
     ],
