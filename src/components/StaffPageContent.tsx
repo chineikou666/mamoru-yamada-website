@@ -116,8 +116,9 @@ export default function StaffPageContent({
 
               {/* 音楽制作 */}
               <div>
-                <h2 className="text-xs sm:text-sm font-light text-[var(--color-foreground)] tracking-[0.05em] sm:tracking-[0.1em] mb-6 whitespace-pre-line">
-                  {locale === "ja" ? "山田守ドキュメンタリ映画\n音楽制作チームのクレジット" : "Mamoru Yamada Documentary Film\nMusic Production Team Credits"}
+                <h2 className="text-xs sm:text-sm font-light text-[var(--color-foreground)] tracking-[0.05em] sm:tracking-[0.1em] mb-6">
+                  <span className="block">{locale === "ja" ? "山田守ドキュメンタリ映画" : "Mamoru Yamada Documentary Film"}</span>
+                  <span className="block">{locale === "ja" ? "音楽制作チームのクレジット" : "Music Production Team Credits"}</span>
                 </h2>
                 
                 {/* 音楽監修 */}
