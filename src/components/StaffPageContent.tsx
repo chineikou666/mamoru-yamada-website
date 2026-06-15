@@ -20,8 +20,6 @@ interface StaffPageContentProps {
   };
   staffData: {
     videoTeam: {
-      title: string;
-      titleEn: string;
       supervisor: StaffMember[];
       members: StaffMember[];
       support: StaffMember[];
