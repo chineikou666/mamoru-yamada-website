@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "buildings": "建築",
+    "research": "活動記録",
+    "about": "プロジェクト",
+    "staff": "スタッフ"
+  },
+  "home": {
+    "title": "山田 守",
+    "subtitle": "Mamoru Yamada",
+    "description": "普段何気なく使い、通り過ぎている建物がある。学校の教室や校舎、キャンパス…当たり前の環境は、先人たちの才気や努力、時に偶然の出会いが重なって紡ぎ出される特異な空間なのかもしれない。私たちは、身近にあるのによく知らない、ある建築家に注目してみることにした。",
+    "cta": "作品を見る",
+    "projectDescription": "東海大学湘南キャンパスの設計をおこなった建築家・山田守のドキュメンタリー映像を制作する。建築作品を動画記録に収め、関係者のインタビューを交えることで、山田守の建築の魅力を後世に残す。",
+    "studentRole": "学生の担当について　本プロジェクトは東海大学教養学部芸術学科の授業の一環として、学生が中心となり、企画からリサーチ、動画撮影、編集、タイトルデザインほか、音響と音楽制作に至るまでの企画運用を行う。",
+    "schedule": "スケジュール",
+    "scheduleItems": [
+      "2024年10月 プロジェクト開始 撮影・制作",
+      "2025年10月 編集作業",
+      "2026年2月 第１章完成予定",
+      "2026年4月 第2章 制作開始"
+    ]
+  },
+  "buildings": {
+    "title": "建築作品",
+    "description": "山田守の建築作品コレクション",
+    "viewProject": "プロジェクトを見る",
+    "mapView": "地図",
+    "listView": "リスト",
+    "allRegions": "すべて",
+    "resultsCount": "件の建築作品",
+    "overview": "建築概観",
+    "history": "歴史背景",
+    "significance": "建築価値と研究意義",
+    "survey": "調査記録",
+    "interview": "インタビュー内容",
+    "documentary": "ドキュメンタリーと映像",
+    "archives": "档案資料",
+    "relatedArticle": "関連記事",
+    "relatedBuildings": "関連建築"
+  },
+  "map": {
+    "loading": "地図を読み込み中...",
+    "viewDetails": "詳細を見る"
+  },
+  "research": {
+    "title": "活動記録",
+    "description": "「山田守 建築ドキュメンタリー」のプロジェクトの活動の記録を更新していきます。",
+    "whatWeDo": "WHAT WE DO",
+    "activityPhotos": "活動写真"
+  },
+  "staff": {
+    "title": "スタッフ",
+    "subtitle": "山田守ドキュメンタリープロジェクト 参加メンバー",
+    "description": "このプロジェクトに関わっているすべてのメンバーです。"
+  },
+  "footer": {
+    "copyright": "© 2025 Taki Lab., Tokai University. All Rights Reserved.",
+    "description": "山田守建築ドキュメンタリープロジェクト"
+  },
+  "theme": {
+    "light": "ライトモード",
+    "dark": "ダークモード"
+  },
+  "language": {
+    "ja": "日本語",
+    "en": "English"
+  }
+}

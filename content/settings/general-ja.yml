@@ -1,0 +1,13 @@
+locale: ja
+siteTitle: 山田 守 | Mamoru Yamada
+siteDescription: 建築家・研究者として、建築を通じて人間と空間の関係を探求しています。
+ogImage: /images/uploads/site-og.jpg
+navigation:
+  - label: ホーム
+    path: /
+  - label: 建築
+    path: /buildings
+  - label: 研究日誌
+    path: /research
+  - label: 概要
+    path: /about

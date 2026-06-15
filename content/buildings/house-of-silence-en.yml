@@ -1,0 +1,32 @@
+locale: en
+slug: house-of-silence
+title: House of Silence
+description: A residential project exploring the dialogue between natural light and shadow
+year: 2024
+location: Tokyo, Japan
+region: kanto
+lat: 35.6762
+lng: 139.6503
+images:
+  - image: /images/uploads/house-of-silence-1.jpg
+    caption: Exterior view
+    alt: Exterior of House of Silence
+  - image: /images/uploads/house-of-silence-2.jpg
+    caption: Living room with natural light
+    alt: Natural light in the living room
+content: |
+  A residence that finds silence amid urban bustle. Designed to incorporate natural light, allowing inhabitants to feel the passage of time through changing shadows. Local timber was used, balancing regional identity with sustainability.
+
+  ## Design Concept
+
+  "Silence" here refers not to the absence of sound, but to the quality of space that brings peace of mind. Even amidst urban noise, we sought to secure a space for introspection.
+
+  ## Technical Features
+
+  - Energy efficiency improvement through natural light introduction
+  - Carbon footprint reduction through use of local timber
+  - High-insulation wall system
+metadata:
+  ogImage: /images/uploads/house-of-silence-og.jpg
+  ogDescription: A residential project in Tokyo exploring the dialogue between natural light and shadow
+date: 2024-06-15 10:00:00

@@ -1,0 +1,52 @@
+locale: ja
+title: 山田 守 - 建築家・研究者
+bio: |
+  山田守は、東京を拠点に活動する建築家・研究者です。建築を通じて、人間と空間の関係を探求しています。
+
+  ## 経歴
+
+  2005年に東京大学工学部建築学科を卒業後、大手建築事務所で5年間の経験を積み、2010年に独立。以来、住宅、公共建築、教育施設など、多様なプロジェクトに携わっています。
+
+  ## 研究テーマ
+
+  - 自然光と建築空間の関係
+  - 持続可能な建築設計
+  - 地域性と建築の融合
+  - デジタル技術を活用した建築デザイン
+
+  ## 方針
+
+  「建築は単なる建物ではなく、人々の生活を豊かにする空間であるべきだ」という信念のもと、各プロジェクトに取り組んでいます。
+career:
+  - year: "2005"
+    description: 東京大学工学部建築学科卒業
+  - year: "2005-2010"
+    description: 大手建築事務所勤務
+  - year: "2010"
+    description: 山田守建築事務所設立
+  - year: "2015"
+    description: 東京芸術大学非常勤講師就任
+awards:
+  - year: "2023"
+    name: 建築学会賞
+    for: 静寂の家
+  - year: "2022"
+    name: JIA新人賞
+    for: 都市への緑の提案
+  - year: "2020"
+    name: グッドデザイン賞
+    for: 森の学校プロジェクト
+profileImage: /images/uploads/yamada-portrait.jpg
+contact:
+  email: info@yamada-arch.com
+  phone: "+81-3-XXXX-XXXX"
+  socialLinks:
+    - platform: twitter
+      url: "https://twitter.com/yamada_arch"
+    - platform: instagram
+      url: "https://instagram.com/yamada.architecture"
+    - platform: website
+      url: "https://yamada-arch.com"
+metadata:
+  ogImage: /images/uploads/about-og.jpg
+  ogDescription: 建築家・研究者の山田守の経歴と活動について

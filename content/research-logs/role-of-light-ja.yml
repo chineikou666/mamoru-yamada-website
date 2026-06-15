@@ -1,0 +1,26 @@
+locale: ja
+slug: role-of-light
+title: 建築における光の役割
+category: architecture-theory
+excerpt: 光は建築空間を形作る最も重要な要素の一つです。
+content: |
+  建築において光は単なる照明手段ではなく、空間の質感、感情、時間の感知を決定づける重要な設計要素です。
+
+  自然光の導入方法は多岐にわたります。天窓、側窓、光井戸、反射板など、それぞれの手法が異なる空間効果を生み出します。例えば、天窓からの光は均一な照明を提供し、側窓からの光は時間の変化を可視化します。
+
+  光と影の対話は、建築空間に深みと感情を与えます。ル・コルビュジエは光を「建築の鍵」と呼び、安藤忠雄は光と影のコントラストを通じて精神性を表現しました。
+
+  現代の建築において、光の設計はより複雑になっています。デジタル技術を活用した光の制御、エネルギー効率を考慮した光の導入、持続可能性を意識した光の設計など、新たな課題が増加しています。
+
+  光の役割を理解し、適切に活用することは、建築家にとって不可欠なスキルです。
+relatedBuildings:
+  - buildingId: house-of-silence
+tags:
+  - 光
+  - 設計理論
+  - 自然光
+featuredImage: /images/uploads/research-light-featured.jpg
+metadata:
+  ogImage: /images/uploads/research-light-og.jpg
+  ogDescription: 建築空間における光の役割と設計手法についての考察
+date: 2024-12-15 09:00:00

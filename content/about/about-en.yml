@@ -1,0 +1,52 @@
+locale: en
+title: Mamoru Yamada - Architect & Researcher
+bio: |
+  Mamoru Yamada is an architect and researcher based in Tokyo. He explores the relationship between humans and space through architecture.
+
+  ## Background
+
+  After graduating from the University of Tokyo's Department of Architecture in 2005, he gained five years of experience at a major architectural firm before establishing his own practice in 2010. Since then, he has been involved in diverse projects including residential, public, and educational facilities.
+
+  ## Research Themes
+
+  - Relationship between natural light and architectural spaces
+  - Sustainable architectural design
+  - Integration of regional identity with architecture
+  - Architectural design utilizing digital technology
+
+  ## Philosophy
+
+  Guided by the belief that "architecture should not merely be buildings, but spaces that enrich people's lives," he approaches each project with dedication and innovation.
+career:
+  - year: "2005"
+    description: Graduated from University of Tokyo, Department of Architecture
+  - year: "2005-2010"
+    description: Worked at major architectural firm
+  - year: "2010"
+    description: Founded Mamoru Yamada Architecture Office
+  - year: "2015"
+    description: Appointed as Adjunct Lecturer at Tokyo University of the Arts
+awards:
+  - year: "2023"
+    name: Architectural Institute of Japan Award
+    for: House of Silence
+  - year: "2022"
+    name: JIA Newcomer Award
+    for: Proposal for Urban Greenery
+  - year: "2020"
+    name: Good Design Award
+    for: Forest School Project
+profileImage: /images/uploads/yamada-portrait.jpg
+contact:
+  email: info@yamada-arch.com
+  phone: "+81-3-XXXX-XXXX"
+  socialLinks:
+    - platform: twitter
+      url: "https://twitter.com/yamada_arch"
+    - platform: instagram
+      url: "https://instagram.com/yamada.architecture"
+    - platform: website
+      url: "https://yamada-arch.com"
+metadata:
+  ogImage: /images/uploads/about-og.jpg
+  ogDescription: About the career and activities of architect and researcher Mamoru Yamada

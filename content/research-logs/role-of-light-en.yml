@@ -1,0 +1,26 @@
+locale: en
+slug: role-of-light
+title: The Role of Light in Architecture
+category: architecture-theory
+excerpt: Light is one of the most important elements in shaping architectural spaces.
+content: |
+  In architecture, light is not merely a means of illumination but a crucial design element that determines spatial quality, emotion, and the perception of time.
+
+  Methods of introducing natural light are diverse. Skylights, side windows, light wells, reflectors—each technique produces different spatial effects. For instance, light from skylights provides uniform illumination, while light from side windows visualizes the passage of time.
+
+  The dialogue between light and shadow gives depth and emotion to architectural spaces. Le Corbusier called light "the key to architecture," and Tadao Ando expresses spirituality through the contrast of light and shadow.
+
+  In contemporary architecture, light design has become more complex. New challenges have increased, including light control using digital technology, energy-efficient light introduction, and sustainability-conscious light design.
+
+  Understanding and properly utilizing the role of light is an essential skill for architects.
+relatedBuildings:
+  - buildingId: house-of-silence
+tags:
+  - light
+  - design theory
+  - natural light
+featuredImage: /images/uploads/research-light-featured.jpg
+metadata:
+  ogImage: /images/uploads/research-light-og.jpg
+  ogDescription: Considerations on the role of light and design methods in architectural spaces
+date: 2024-12-15 09:00:00

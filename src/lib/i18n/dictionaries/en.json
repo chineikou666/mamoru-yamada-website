@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Home",
+    "buildings": "Buildings",
+    "research": "Activity Log",
+    "about": "Project",
+    "staff": "Staff"
+  },
+  "home": {
+    "title": "Mamoru Yamada",
+    "subtitle": "山田 守",
+    "description": "There are buildings we use casually and pass by without a second thought — school classrooms, buildings, campuses. These familiar environments may be extraordinary spaces woven together by the ingenuity, effort, and encounters of those who came before us. We decided to focus on an architect we live close to but don't know well.",
+    "cta": "View Works",
+    "projectDescription": "This project involves the production of a documentary film about architect Mamoru Yamada, who designed the Tokai University Shonan Campus. The film will document his architectural works and include interviews with related individuals, aiming to preserve and convey the appeal of Yamada's architecture to future generations.",
+    "studentRole": "Student Involvement: As part of a course in the Department of Arts, School of Humanities and Culture, Tokai University, students will take the lead in all aspects of the project—from planning and research to video shooting, editing, title design, sound, and music production.",
+    "schedule": "Schedule",
+    "scheduleItems": [
+      "October 2024: Project launch",
+      "Fall 2025: Editing",
+      "February 2026: Chapter 1 completion",
+      "April 2026: Chapter 2 begins"
+    ]
+  },
+  "buildings": {
+    "title": "Architecture Works",
+    "description": "Collection of Mamoru Yamada's architectural works",
+    "viewProject": "View Project",
+    "mapView": "Map",
+    "listView": "List",
+    "allRegions": "All",
+    "resultsCount": "architectural works",
+    "overview": "Overview",
+    "history": "Historical Background",
+    "significance": "Architectural Value & Research Significance",
+    "survey": "Survey Records",
+    "interview": "Interviews",
+    "documentary": "Documentary & Visuals",
+    "archives": "Archives",
+    "relatedArticle": "Related Articles",
+    "relatedBuildings": "Related Buildings"
+  },
+  "map": {
+    "loading": "Loading map...",
+    "viewDetails": "View Details"
+  },
+  "research": {
+    "title": "Activity Log",
+    "description": "We will update the activity records of the 'Mamoru Yamada Architecture Documentary' project.",
+    "whatWeDo": "WHAT WE DO",
+    "activityPhotos": "Activity Photos"
+  },
+  "staff": {
+    "title": "Staff",
+    "subtitle": "Mamoru Yamada Documentary Project Team Members",
+    "description": "All the members involved in this project."
+  },
+  "footer": {
+    "copyright": "© 2025 Taki Lab., Tokai University. All Rights Reserved.",
+    "description": "Mamoru Yamada Architecture Documentary Project"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "language": {
+    "ja": "日本語",
+    "en": "English"
+  }
+}
