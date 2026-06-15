@@ -62,7 +62,7 @@ export default function HomePageContent({
         
         {/* 内容区域 - hover时显示 */}
         <motion.div 
-          className="relative z-10 w-full pb-24 md:pb-32 lg:pb-40"
+          className="relative z-10 w-full pb-20 md:pb-28 lg:pb-36"
           animate={{ 
             opacity: isHeroHovered ? 1 : 0,
           }}
@@ -77,12 +77,12 @@ export default function HomePageContent({
               {dictionary.home.title}
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-[var(--color-muted-foreground)] tracking-[0.08em] md:tracking-[0.1em] mb-12 sm:mb-14 md:mb-20">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-[var(--color-muted-foreground)] tracking-[0.08em] md:tracking-[0.1em] mb-14 sm:mb-16 md:mb-24">
               {dictionary.home.subtitle}
             </p>
 
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
-              <p className="text-sm sm:text-base md:text-lg text-[var(--color-muted-foreground)] leading-[1.9] md:leading-[2] max-w-xl">
+              <p className="text-sm sm:text-base md:text-lg text-[var(--color-muted-foreground)] leading-[2.2] md:leading-[2.4] tracking-[0.03em] max-w-xl">
                 {dictionary.home.description}
               </p>
 
