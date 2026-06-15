@@ -6,6 +6,7 @@ import { locales, type Locale } from "@/lib/i18n/config";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageTransitionWrapper from "@/components/PageTransitionWrapper";
+import ScrollToTop from "@/components/ScrollToTop";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -61,6 +62,7 @@ export default async function LocaleLayout({
             <PageTransitionWrapper>{children}</PageTransitionWrapper>
           </main>
           <Footer dictionary={dictionary} locale={typedLocale} />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
