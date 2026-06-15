@@ -128,24 +128,33 @@ export default function HomePageContent({
                 {dictionary.home.projectDescription}
               </p>
               
-              <div className="border-l-2 border-[var(--color-border)] pl-6 md:pl-8">
+              <div>
                 <h3 className="text-xs md:text-sm tracking-[0.2em] text-[var(--color-muted-foreground)] uppercase mb-6 md:mb-8">
                   {dictionary.home.schedule}
                 </h3>
-                <div className="space-y-4 md:space-y-5">
-                  {dictionary.home.scheduleItems.map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="flex items-start gap-4"
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] mt-2 shrink-0" />
-                      <p className="text-sm sm:text-base text-[var(--color-foreground)] font-light leading-relaxed">{item}</p>
-                    </motion.div>
-                  ))}
+                <div className="space-y-3 md:space-y-4">
+                  {dictionary.home.scheduleItems.map((item, index) => {
+                    const parts = item.split(' ');
+                    const date = parts[0];
+                    const content = parts.slice(1).join(' ');
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 8 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        className="flex items-baseline gap-4 md:gap-6"
+                      >
+                        <span className="text-xs md:text-sm text-[var(--color-muted-foreground)] tracking-wider w-24 md:w-32 shrink-0">
+                          {date}
+                        </span>
+                        <span className="text-sm md:text-base text-[var(--color-foreground)] font-light">
+                          {content}
+                        </span>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
