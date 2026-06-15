@@ -61,11 +61,11 @@ export default function StaffPageContent({
         {/* 映像と音楽 - 統一スタイル */}
         <FadeInView delay={0.1}>
           <section className="mb-16 md:mb-20 pb-12 border-b border-[var(--color-border)]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 md:divide-x md:divide-[var(--color-border)]">
               {/* 映像制作 */}
-              <div>
+              <div className="md:pr-12">
                 {/* 山田守ドキュメンタリー标题 */}
-                <h2 className="text-xs sm:text-sm font-light text-[var(--color-foreground)] tracking-[0.05em] sm:tracking-[0.1em] mb-4">
+                <h2 className="text-xs sm:text-sm font-light text-[var(--color-foreground)] tracking-[0.05em] sm:tracking-[0.1em] mb-6">
                   {locale === "ja" ? "山田守ドキュメンタリー" : "Mamoru Yamada Documentary"}
                 </h2>
 
@@ -115,8 +115,8 @@ export default function StaffPageContent({
               </div>
 
               {/* 音楽制作 */}
-              <div>
-                <h2 className="text-[11px] sm:text-xs md:text-sm font-light text-[var(--color-foreground)] tracking-[0.02em] sm:tracking-[0.05em] md:tracking-[0.1em] mb-6 whitespace-nowrap overflow-hidden text-ellipsis">
+              <div className="md:pl-12">
+                <h2 className="text-[11px] sm:text-xs md:text-sm font-light text-[var(--color-foreground)] tracking-[0.02em] sm:tracking-[0.05em] md:tracking-[0.1em] mb-6">
                   {locale === "ja" ? "山田守ドキュメンタリ映画　音楽制作チームのクレジット" : "Mamoru Yamada Documentary Film - Music Production Team Credits"}
                 </h2>
                 
