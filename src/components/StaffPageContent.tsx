@@ -81,18 +81,6 @@ export default function StaffPageContent({
                   ))}
                 </div>
 
-                {/* 参加メンバー */}
-                <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
-                  {locale === "ja" ? "参加メンバー" : "Team Members"}
-                </p>
-                <div className="space-y-2 mb-8">
-                  {staffData.videoTeam.members.map((member, index) => (
-                    <p key={index} className="text-sm text-[var(--color-foreground)]">
-                      {member.name}
-                    </p>
-                  ))}
-                </div>
-
                 <div className="space-y-3 mt-6 pt-6 border-t border-[var(--color-border)]">
                   {staffData.videoTeam.support.map((member, index) => (
                     <div key={index} className="flex justify-between items-baseline text-sm">
