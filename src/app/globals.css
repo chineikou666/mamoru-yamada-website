@@ -97,6 +97,13 @@ img {
   height: auto;
 }
 
+/* Japanese text line break optimization */
+p, h1, h2, h3, h4, h5, h6, span, li, td, th {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
