@@ -34,8 +34,8 @@ const staffData = {
   },
   // 音乐团队
   musicTeam: {
-    title: "山田守ドキュメンタリ映画<br class='hidden md:inline' />音楽制作チームのクレジット",
-    titleEn: "Mamoru Yamada Documentary Film<br class='hidden md:inline' />Music Production Team Credits",
+    title: "山田守ドキュメンタリ映画<br/>音楽制作チームのクレジット",
+    titleEn: "Mamoru Yamada Documentary Film<br/>Music Production Team Credits",
     supervisor: [
       { name: "檜垣 智也", role: "音楽監修", roleEn: "Music Supervisor" },
     ],
