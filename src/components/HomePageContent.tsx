@@ -5,6 +5,15 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import FadeInView from "@/components/motion/FadeInView";
 
+const staggerItem = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+  },
+};
+
 interface FeaturedBuilding {
   id: number;
   title: string;
@@ -152,23 +161,39 @@ export default function HomePageContent({
                 </Link>
               </div>
               
-              <div className="space-y-3 md:space-y-4">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={{
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.1,
+                    },
+                  },
+                }}
+                className="space-y-3 md:space-y-4"
+              >
                 {[
                   { date: "2026.01", text: locale === "ja" ? "東海大学学園史資料センター見学" : "Visit to Tokai University Archives" },
                   { date: "2025.09", text: locale === "ja" ? "リニューアルした４号館の中央図書館撮影" : "Filming at Renewed Building 4 Library" },
                   { date: "2025.07", text: locale === "ja" ? "ローマ・サピエンツァ大学 学会発表" : "Presentation at Roma Sapienza University" },
                   { date: "2025.06", text: locale === "ja" ? "サウンドトラック録音セッション" : "Soundtrack Recording Session" },
                 ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 md:gap-4 py-2 md:py-3 border-b border-[var(--color-border)]">
+                  <motion.div
+                    key={index}
+                    variants={staggerItem}
+                    className="flex items-start gap-3 md:gap-4 py-2 md:py-3 border-b border-[var(--color-border)]"
+                  >
                     <span className="text-[10px] sm:text-[11px] text-[var(--color-muted-foreground)] tracking-wider w-14 sm:w-16 shrink-0">
                       {item.date}
                     </span>
                     <span className="text-xs sm:text-sm text-[var(--color-foreground)]">
                       {item.text}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </FadeInView>
         </div>
