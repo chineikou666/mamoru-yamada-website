@@ -58,81 +58,91 @@ export default function StaffPageContent({
           </FadeInView>
         </div>
 
-        {/* 映像制作 - 横置きスタイル */}
+        {/* 映像と音楽 - 統一スタイル */}
         <FadeInView delay={0.1}>
           <section className="mb-16 md:mb-20 pb-12 border-b border-[var(--color-border)]">
-            {/* 山田守ドキュメンタリー标题 */}
-            <h2 className="text-sm md:text-base font-light text-[var(--color-foreground)] tracking-[0.1em] mb-6">
-              {locale === "ja" ? "山田守ドキュメンタリー" : "Mamoru Yamada Documentary"}
-            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+              {/* 映像制作 */}
+              <div>
+                {/* 山田守ドキュメンタリー标题 */}
+                <h2 className="text-xs sm:text-sm font-light text-[var(--color-foreground)] tracking-[0.05em] sm:tracking-[0.1em] mb-4">
+                  {locale === "ja" ? "山田守ドキュメンタリー" : "Mamoru Yamada Documentary"}
+                </h2>
 
-            {/* 監修 */}
-            <p className="text-[10px] text-[var(--color-muted-foreground)] mb-2">
-              {locale === "ja" ? "監修" : "Supervision"}
-            </p>
-            <p className="text-lg font-light text-[var(--color-foreground)] mb-6">
-              {staffData.videoTeam.supervisor[0]?.name}
-            </p>
-
-            {/* 参加メンバー */}
-            <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
-              {locale === "ja" ? "参加メンバー" : "Team Members"}
-            </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
-              {staffData.videoTeam.members.map((member, index) => (
-                <p key={index} className="text-sm text-[var(--color-foreground)]">
-                  {member.name}
+                {/* 監修 */}
+                <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
+                  {locale === "ja" ? "監修" : "Supervision"}
                 </p>
-              ))}
-            </div>
-
-            {/* サポート・題字 */}
-            <div className="space-y-3 pt-6 border-t border-[var(--color-border)]">
-              {staffData.videoTeam.support.map((member, index) => (
-                <div key={index} className="flex justify-between items-baseline text-sm">
-                  <span className="text-[var(--color-foreground)]">{member.name}</span>
-                  <span className="text-[10px] text-[var(--color-muted-foreground)]">
-                    {locale === "ja" ? member.role : member.roleEn}
-                  </span>
+                <div className="space-y-2 mb-6">
+                  {staffData.videoTeam.supervisor.map((member, index) => (
+                    <p key={index} className="text-lg font-light text-[var(--color-foreground)]">
+                      {member.name}
+                    </p>
+                  ))}
                 </div>
-              ))}
-              {staffData.videoTeam.calligraphy.map((member, index) => (
-                <div key={index} className="flex justify-between items-baseline text-sm">
-                  <span className="text-[var(--color-foreground)]">{member.name}</span>
-                  <span className="text-[10px] text-[var(--color-muted-foreground)]">
-                    {locale === "ja" ? member.role : member.roleEn}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
-        </FadeInView>
 
-        {/* 音楽制作 - 横置きスタイル */}
-        <FadeInView delay={0.2}>
-          <section className="mb-16 md:mb-20 pb-12 border-b border-[var(--color-border)]">
-            <h2 className="text-sm md:text-base font-light text-[var(--color-foreground)] tracking-[0.1em] mb-6">
-              {locale === "ja" ? "山田守ドキュメンタリ映画　音楽制作チームのクレジット" : "Mamoru Yamada Documentary Film - Music Production Team Credits"}
-            </h2>
-            
-            {/* 音楽監修 */}
-            <p className="text-[10px] text-[var(--color-muted-foreground)] mb-2">
-              {locale === "ja" ? "音楽監修" : "Music Supervisor"}
-            </p>
-            <p className="text-lg font-light text-[var(--color-foreground)] mb-6">
-              {staffData.musicTeam.supervisor[0]?.name}
-            </p>
-
-            {/* 制作メンバー */}
-            <div className="space-y-3">
-              {staffData.musicTeam.members.map((member, index) => (
-                <div key={index} className="flex justify-between items-baseline text-sm">
-                  <span className="text-[var(--color-foreground)]">{member.name}</span>
-                  <span className="text-[10px] text-[var(--color-muted-foreground)]">
-                    {locale === "ja" ? member.role : member.roleEn}
-                  </span>
+                {/* 参加メンバー */}
+                <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
+                  {locale === "ja" ? "参加メンバー" : "Team Members"}
+                </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+                  {staffData.videoTeam.members.map((member, index) => (
+                    <p key={index} className="text-sm text-[var(--color-foreground)]">
+                      {member.name}
+                    </p>
+                  ))}
                 </div>
-              ))}
+
+                {/* サポート・題字 */}
+                <div className="space-y-3 pt-6 border-t border-[var(--color-border)]">
+                  {staffData.videoTeam.support.map((member, index) => (
+                    <div key={index} className="flex justify-between items-baseline text-sm">
+                      <span className="text-[var(--color-foreground)]">{member.name}</span>
+                      <span className="text-[10px] text-[var(--color-muted-foreground)]">
+                        {locale === "ja" ? member.role : member.roleEn}
+                      </span>
+                    </div>
+                  ))}
+                  {staffData.videoTeam.calligraphy.map((member, index) => (
+                    <div key={index} className="flex justify-between items-baseline text-sm">
+                      <span className="text-[var(--color-foreground)]">{member.name}</span>
+                      <span className="text-[10px] text-[var(--color-muted-foreground)]">
+                        {locale === "ja" ? member.role : member.roleEn}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 音楽制作 */}
+              <div>
+                <h2 className="text-[11px] sm:text-xs md:text-sm font-light text-[var(--color-foreground)] tracking-[0.02em] sm:tracking-[0.05em] md:tracking-[0.1em] mb-6">
+                  <span className="md:hidden">{locale === "ja" ? "山田守ドキュメンタリ映画" : "Mamoru Yamada Documentary Film"}<br/>{locale === "ja" ? "音楽制作チームのクレジット" : "Music Production Team Credits"}</span>
+                  <span className="hidden md:inline">{locale === "ja" ? "山田守ドキュメンタリ映画　音楽制作チームのクレジット" : "Mamoru Yamada Documentary Film - Music Production Team Credits"}</span>
+                </h2>
+                
+                {/* 音楽監修 */}
+                <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
+                  {locale === "ja" ? "音楽監修" : "Music Supervisor"}
+                </p>
+                <div className="flex justify-between items-baseline mb-6">
+                  <p className="text-sm font-light text-[var(--color-foreground)]">
+                    {staffData.musicTeam.supervisor[0]?.name}
+                  </p>
+                </div>
+
+                {/* 制作メンバー */}
+                <div className="space-y-3">
+                  {staffData.musicTeam.members.map((member, index) => (
+                    <div key={index} className="flex justify-between items-baseline text-sm">
+                      <span className="text-[var(--color-foreground)]">{member.name}</span>
+                      <span className="text-[10px] text-[var(--color-muted-foreground)]">
+                        {locale === "ja" ? member.role : member.roleEn}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
         </FadeInView>
