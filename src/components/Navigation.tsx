@@ -50,7 +50,7 @@ export default function Navigation({ dictionary, locale }: NavigationProps) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <div className="px-8 md:px-16 lg:px-24 xl:px-32">
+      <div className="px-4 md:px-8 lg:px-12 xl:px-16">
         <div className="flex items-center justify-between h-16">
           {/* Logo - 左侧 */}
           <Link href={`/${locale}`} className="flex items-center shrink-0 group">
