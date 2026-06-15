@@ -43,7 +43,7 @@ export default function StaffPageContent({
 }: StaffPageContentProps) {
   return (
     <div className="min-h-screen py-20 md:py-28 px-6 md:px-12 lg:px-20">
-      <div className="max-w-[900px] mx-auto">
+      <div className="max-w-[1000px] mx-auto">
         {/* Header */}
         <div className="mb-16 md:mb-20">
           <FadeInView>
