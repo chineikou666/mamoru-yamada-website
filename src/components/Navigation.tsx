@@ -146,18 +146,19 @@ export default function Navigation({ dictionary, locale }: NavigationProps) {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <div className="px-5 sm:px-8 py-4 space-y-3">
+            <div className="px-5 sm:px-8 py-6 space-y-4">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.href}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: index * 0.05, duration: 0.3 }}
+                  className="text-center"
                 >
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block text-sm transition-colors ${
+                    className={`block text-base transition-colors ${
                       pathname === item.href
                         ? "text-[var(--color-foreground)]"
                         : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
