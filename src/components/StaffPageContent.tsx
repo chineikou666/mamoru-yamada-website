@@ -117,7 +117,7 @@ export default function StaffPageContent({
               {/* 音楽制作 */}
               <div>
                 <h2 className="text-sm font-light text-[var(--color-foreground)] tracking-[0.1em] mb-6">
-                  {locale === "ja" ? staffData.musicTeam.title : staffData.musicTeam.titleEn}
+                  <span dangerouslySetInnerHTML={{ __html: locale === "ja" ? staffData.musicTeam.title : staffData.musicTeam.titleEn }} />
                 </h2>
                 
                 {/* 音楽監修 */}
