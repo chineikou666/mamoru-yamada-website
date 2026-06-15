@@ -57,7 +57,7 @@ export default function Navigation({ dictionary, locale }: NavigationProps) {
             <motion.img
               src="https://static.wixstatic.com/media/b3aa8a_e474190500794a5183caba469d636d76~mv2.png"
               alt="山田 守 Logo"
-              className="max-h-[72px] w-auto object-contain"
+              className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             />
