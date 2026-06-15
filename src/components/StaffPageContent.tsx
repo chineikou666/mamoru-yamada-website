@@ -64,11 +64,6 @@ export default function StaffPageContent({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
               {/* 映像制作 */}
               <div>
-                {/* 山田守ドキュメンタリープロジェクト标题 */}
-                <h2 className="text-xs sm:text-sm font-light text-[var(--color-foreground)] tracking-[0.05em] sm:tracking-[0.1em] mb-4">
-                  {locale === "ja" ? "山田守ドキュメンタリープロジェクト" : "Mamoru Yamada Documentary Project"}
-                </h2>
-
                 {/* 監修 */}
                 <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
                   {locale === "ja" ? "監修" : "Supervision"}
