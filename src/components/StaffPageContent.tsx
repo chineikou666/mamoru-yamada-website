@@ -61,40 +61,40 @@ export default function StaffPageContent({
         {/* 映像と音楽 - 統一スタイル */}
         <FadeInView delay={0.1}>
           <section className="mb-16 md:mb-20 pb-12 border-b border-[var(--color-border)]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 md:divide-x md:divide-[var(--color-border)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
               {/* 映像制作 */}
-              <div className="md:pr-12">
+              <div>
                 {/* 山田守ドキュメンタリー标题 */}
                 <h2 className="text-xs sm:text-sm font-light text-[var(--color-foreground)] tracking-[0.05em] sm:tracking-[0.1em] mb-6">
                   {locale === "ja" ? "山田守ドキュメンタリー" : "Mamoru Yamada Documentary"}
                 </h2>
 
                 {/* 監修 */}
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3 mb-8">
+                  <p className="text-[10px] text-[var(--color-muted-foreground)] mb-2">
+                    {locale === "ja" ? "監修" : "Supervision"}
+                  </p>
                   {staffData.videoTeam.supervisor.map((member, index) => (
-                    <div key={index} className="flex justify-between items-baseline text-sm">
-                      <span className="text-[var(--color-foreground)]">{member.name}</span>
-                      <span className="text-[10px] text-[var(--color-muted-foreground)]">
-                        {locale === "ja" ? "監修" : "Supervision"}
-                      </span>
-                    </div>
+                    <p key={index} className="text-sm text-[var(--color-foreground)]">
+                      {member.name}
+                    </p>
                   ))}
                 </div>
 
                 {/* 参加メンバー */}
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3">
+                  <p className="text-[10px] text-[var(--color-muted-foreground)] mb-2">
+                    {locale === "ja" ? "参加メンバー" : "Team Members"}
+                  </p>
                   {staffData.videoTeam.members.map((member, index) => (
-                    <div key={index} className="flex justify-between items-baseline text-sm">
-                      <span className="text-[var(--color-foreground)]">{member.name}</span>
-                      <span className="text-[10px] text-[var(--color-muted-foreground)]">
-                        {locale === "ja" ? "参加メンバー" : "Team Member"}
-                      </span>
-                    </div>
+                    <p key={index} className="text-sm text-[var(--color-foreground)]">
+                      {member.name}
+                    </p>
                   ))}
                 </div>
 
                 {/* サポート・題字 */}
-                <div className="space-y-3 pt-4 border-t border-[var(--color-border)]">
+                <div className="space-y-3 pt-6 mt-6 border-t border-[var(--color-border)]">
                   {staffData.videoTeam.support.map((member, index) => (
                     <div key={index} className="flex justify-between items-baseline text-sm">
                       <span className="text-[var(--color-foreground)]">{member.name}</span>
@@ -115,20 +115,20 @@ export default function StaffPageContent({
               </div>
 
               {/* 音楽制作 */}
-              <div className="md:pl-12">
-                <h2 className="text-[11px] sm:text-xs md:text-sm font-light text-[var(--color-foreground)] tracking-[0.02em] sm:tracking-[0.05em] md:tracking-[0.1em] mb-6">
+              <div>
+                <h2 className="text-[11px] sm:text-xs md:text-sm font-light text-[var(--color-foreground)] tracking-[0.02em] sm:tracking-[0.05em] md:tracking-[0.1em] mb-6 whitespace-nowrap">
                   {locale === "ja" ? "山田守ドキュメンタリ映画　音楽制作チームのクレジット" : "Mamoru Yamada Documentary Film - Music Production Team Credits"}
                 </h2>
                 
                 {/* 音楽監修 */}
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3 mb-8">
+                  <p className="text-[10px] text-[var(--color-muted-foreground)] mb-2">
+                    {locale === "ja" ? "音楽監修" : "Music Supervisor"}
+                  </p>
                   {staffData.musicTeam.supervisor.map((member, index) => (
-                    <div key={index} className="flex justify-between items-baseline text-sm">
-                      <span className="text-[var(--color-foreground)]">{member.name}</span>
-                      <span className="text-[10px] text-[var(--color-muted-foreground)]">
-                        {locale === "ja" ? "音楽監修" : "Music Supervisor"}
-                      </span>
-                    </div>
+                    <p key={index} className="text-sm text-[var(--color-foreground)]">
+                      {member.name}
+                    </p>
                   ))}
                 </div>
 
