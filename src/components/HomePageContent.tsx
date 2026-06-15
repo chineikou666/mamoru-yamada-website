@@ -150,7 +150,7 @@ export default function HomePageContent({
                           {date}
                         </span>
                     <span className="text-sm md:text-base text-[var(--color-foreground)] font-light" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
-                      {item.text}
+                      {content}
                     </span>
                       </motion.div>
                     );
