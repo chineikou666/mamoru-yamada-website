@@ -64,6 +64,11 @@ export default function StaffPageContent({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
               {/* 映像制作 */}
               <div>
+                {/* 山田守ドキュメンタリープロジェクト标题 */}
+                <h2 className="text-xs sm:text-sm font-light text-[var(--color-foreground)] tracking-[0.05em] sm:tracking-[0.1em] mb-4">
+                  {locale === "ja" ? "山田守ドキュメンタリープロジェクト" : "Mamoru Yamada Documentary Project"}
+                </h2>
+
                 {/* 監修 */}
                 <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
                   {locale === "ja" ? "監修" : "Supervision"}
@@ -78,7 +83,7 @@ export default function StaffPageContent({
 
                 {/* 参加メンバー */}
                 <p className="text-[10px] text-[var(--color-muted-foreground)] mb-3">
-                  {locale === "ja" ? "参加メンバー 2024年度" : "Team Members 2024"}
+                  {locale === "ja" ? "参加メンバー" : "Team Members"}
                 </p>
                 <div className="space-y-2 mb-8">
                   {staffData.videoTeam.members.map((member, index) => (
@@ -110,9 +115,9 @@ export default function StaffPageContent({
 
               {/* 音楽制作 */}
               <div>
-                <h2 className="text-[11px] sm:text-xs md:text-sm font-light text-[var(--color-foreground)] tracking-[0.02em] sm:tracking-[0.05em] md:tracking-[0.1em] mb-6 leading-relaxed">
-                  <span className="block mb-1">{locale === "ja" ? "山田守ドキュメンタリ映画" : "Mamoru Yamada Documentary Film"}</span>
-                  <span className="block">{locale === "ja" ? "音楽制作チームのクレジット" : "Music Production Team Credits"}</span>
+                <h2 className="text-[11px] sm:text-xs md:text-sm font-light text-[var(--color-foreground)] tracking-[0.02em] sm:tracking-[0.05em] md:tracking-[0.1em] mb-6">
+                  <span className="md:hidden">{locale === "ja" ? "山田守ドキュメンタリ映画" : "Mamoru Yamada Documentary Film"}<br/>{locale === "ja" ? "音楽制作チームのクレジット" : "Music Production Team Credits"}</span>
+                  <span className="hidden md:inline">{locale === "ja" ? "山田守ドキュメンタリ映画　音楽制作チームのクレジット" : "Mamoru Yamada Documentary Film - Music Production Team Credits"}</span>
                 </h2>
                 
                 {/* 音楽監修 */}
