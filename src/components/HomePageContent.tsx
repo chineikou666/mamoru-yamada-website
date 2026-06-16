@@ -124,7 +124,7 @@ export default function HomePageContent({
               <h2 className="text-lg sm:text-xl md:text-2xl font-light text-[var(--color-foreground)] tracking-[0.1em] mb-8 md:mb-12">
                 {locale === "ja" ? "プロジェクト" : "Project"}
               </h2>
-              <p className="text-sm sm:text-base md:text-lg text-[var(--color-muted-foreground)] leading-[2] md:leading-[2.4] mb-12 md:mb-16 max-w-3xl" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
+              <p className="text-sm sm:text-base md:text-lg text-[var(--color-muted-foreground)] leading-[2] md:leading-[2.4] mb-12 md:mb-16 max-w-3xl whitespace-pre-line" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
                 {dictionary.home.projectDescription}
               </p>
               
