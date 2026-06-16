@@ -7,7 +7,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageTransitionWrapper from "@/components/PageTransitionWrapper";
 import ScrollToTop from "@/components/ScrollToTop";
-import IdentityHandler from "@/components/IdentityHandler";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -57,7 +56,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <IdentityHandler />
         <ThemeProvider>
           <Navigation dictionary={dictionary} locale={typedLocale} />
           <main className="flex-1">
