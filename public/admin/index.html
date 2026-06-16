@@ -6,26 +6,16 @@
   <title>Content Manager</title>
 </head>
 <body>
-  <!-- 加载 Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  
-  <!-- 加载 Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@3.3.0/dist/decap-cms.js"></script>
-  
   <script>
-    // 初始化 Identity Widget 并处理 recovery token
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
+      window.netlifyIdentity.on("init", user => {
         if (!user) {
-          // 如果有 recovery_token，打开重置密码对话框
-          if (window.location.hash && window.location.hash.includes("recovery_token")) {
-            window.netlifyIdentity.open("recovery");
-          } else {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
+          window.netlifyIdentity.open();
         }
+      });
+      window.netlifyIdentity.on("login", user => {
+        window.location.href = "/admin/#/" + user.token.access_token;
       });
     }
   </script>
