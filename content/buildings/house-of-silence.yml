@@ -1,0 +1,32 @@
+locale: ja
+slug: house-of-silence
+title: 静寂の家
+description: 自然光と影の対話を探求する住宅プロジェクト
+year: 2024
+location: 東京, 日本
+region: kanto
+lat: 35.6762
+lng: 139.6503
+images:
+  - image: /images/uploads/house-of-silence-1.jpg
+    caption: 外観全景
+    alt: 静寂の家の外観
+  - image: /images/uploads/house-of-silence-2.jpg
+    caption: 自然光が差し込むリビング
+    alt: リビングルームの自然光
+content: |
+  都市の喧騒の中で静寂を見つける住宅。自然光を導入し、影の変化を通じて時間の流れを感じることができる空間を設計した。材料は地元の木材を使用し、地域性と持続可能性を両立させた。
+
+  ## 設計コンセプト
+
+  「静寂」は、物理的な音のなさではなく、心が安らぐ空間の質感を指す。都市の噪音の中でも、内省の空間を確保する。
+
+  ## 技術的特徴
+
+  - 自然光の導入によるエネルギー効率の向上
+  - 地域木材の使用によるカーボンフットプリントの削減
+  - 断熱性能の高い壁体システム
+metadata:
+  ogImage: /images/uploads/house-of-silence-og.jpg
+  ogDescription: 東京に建つ、自然光と影の対話を探求する住宅プロジェクト
+date: 2024-06-15 10:00:00
