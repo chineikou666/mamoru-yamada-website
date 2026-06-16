@@ -35,6 +35,13 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            if (window.location.hash && (window.location.hash.includes('invite') || window.location.hash.includes('password_reset') || window.location.hash.includes('confirmation'))) {
+              window.location.href = '/admin/' + window.location.hash;
+            }
+          `
+        }} />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
