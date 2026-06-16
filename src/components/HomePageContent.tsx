@@ -92,7 +92,7 @@ export default function HomePageContent({
             </p>
 
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 sm:gap-8 md:gap-16">
-              <p className="text-xs sm:text-sm md:text-lg text-[var(--color-muted-foreground)] leading-[2.2] md:leading-[2.6] tracking-[0.02em] md:tracking-[0.03em] max-w-2xl lg:max-w-3xl" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
+              <p className="text-xs sm:text-sm md:text-lg text-[var(--color-muted-foreground)] leading-[2.2] md:leading-[2.6] tracking-[0.02em] md:tracking-[0.03em] max-w-2xl lg:max-w-3xl whitespace-pre-line" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
                 {dictionary.home.description}
               </p>
 
