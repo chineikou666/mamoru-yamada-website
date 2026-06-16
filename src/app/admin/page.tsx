@@ -1,25 +1,29 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function AdminPage() {
+  const loaded = useRef(false);
+
   useEffect(() => {
-    // Load Decap CMS dynamically on client side
+    if (loaded.current) return;
+    loaded.current = true;
+
+    // Load Decap CMS
     const script = document.createElement("script");
     script.src = "https://unpkg.com/decap-cms@^2.0.0/dist/decap-cms.js";
     script.onload = () => {
-      console.log("Decap CMS loaded");
+      console.log("Decap CMS loaded successfully");
+    };
+    script.onerror = (e) => {
+      console.error("Failed to load Decap CMS", e);
     };
     document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
   }, []);
 
   return (
-    <div>
-      <h1>Loading Content Manager...</h1>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
+      <p>Loading Content Manager...</p>
     </div>
   );
 }
