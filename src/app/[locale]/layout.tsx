@@ -55,6 +55,26 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <head>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            if (window.netlifyIdentity) {
+              window.netlifyIdentity.on("init", (user) => {
+                if (!user) {
+                  window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                  });
+                }
+              });
+              // Handle recovery token
+              if (window.location.hash && window.location.hash.includes("recovery_token")) {
+                window.netlifyIdentity.open();
+              }
+            }
+          `
+        }} />
+      </head>
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
           <Navigation dictionary={dictionary} locale={typedLocale} />
