@@ -7,18 +7,12 @@ public_folder: "/images/uploads"
 
 publish_mode: editorial_workflow
 
-i18n:
-  structure: "multiple_file"
-  locales: ["ja", "en"]
-  default_locale: "ja"
-
 collections:
   - name: "buildings"
     label: "建築作品"
     folder: "content/buildings"
     create: true
     slug: "{{slug}}"
-    i18n: true
     fields:
       - { label: "Locale", name: "locale", widget: "select", options: [{ label: "日本語", value: "ja" }, { label: "English", value: "en" }], default: "ja" }
       - { label: "タイトル", name: "title", widget: "string", required: true }
@@ -34,7 +28,6 @@ collections:
     folder: "content/research-logs"
     create: true
     slug: "{{slug}}"
-    i18n: true
     fields:
       - { label: "Locale", name: "locale", widget: "select", options: [{ label: "日本語", value: "ja" }, { label: "English", value: "en" }], default: "ja" }
       - { label: "タイトル", name: "title", widget: "string", required: true }
