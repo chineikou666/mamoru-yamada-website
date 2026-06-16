@@ -4,8 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Content Manager</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    #loading { text-align: center; padding: 50px; }
+  </style>
 </head>
 <body>
+  <div id="loading">
+    <h2>Loading Content Manager...</h2>
+    <p>Please wait while the CMS loads.</p>
+  </div>
+  <script>
+    // Remove loading message when CMS loads
+    document.getElementById('loading').style.display = 'none';
+  </script>
   <script src="https://unpkg.com/decap-cms@3.3.0/dist/decap-cms.js"></script>
 </body>
 </html>
