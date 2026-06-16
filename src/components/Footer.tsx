@@ -25,7 +25,7 @@ export default function Footer({ dictionary, locale }: FooterProps) {
               <img
                 src="https://static.wixstatic.com/media/b3aa8a_e474190500794a5183caba469d636d76~mv2.png"
                 alt="山田 守 Logo"
-                className="h-10 w-auto"
+                className="h-10 w-auto dark:invert"
               />
             </Link>
 
