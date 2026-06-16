@@ -37,11 +37,12 @@ export function proxy(request: NextRequest) {
 
   if (pathnameHasLocale) return;
 
-  // Skip middleware for static files and API routes
+  // Skip middleware for static files, API routes, and admin
   if (
     pathname.startsWith("/api") ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/images") ||
+    pathname.startsWith("/admin") ||
     pathname.includes(".")
   ) {
     return;
