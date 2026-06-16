@@ -9,9 +9,9 @@ export default function AdminPage() {
     if (loaded.current) return;
     loaded.current = true;
 
-    // Load Decap CMS with config
+    // Load Decap CMS from local file to avoid tracking prevention issues
     const script = document.createElement("script");
-    script.src = "https://unpkg.com/decap-cms@^2.0.0/dist/decap-cms.js";
+    script.src = "/admin/decap-cms.js";
     script.onload = () => {
       console.log("Decap CMS loaded successfully");
     };
