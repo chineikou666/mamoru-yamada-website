@@ -3,6 +3,8 @@ import { type Locale } from "@/lib/i18n/config";
 import { getStaff } from "@/lib/sanity-queries";
 import StaffPageContent from "@/components/StaffPageContent";
 
+export const dynamic = "force-dynamic";
+
 const defaultStaffData = {
   videoTeam: {
     supervisor: [

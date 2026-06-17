@@ -4,7 +4,7 @@ import { getResearchLogs } from "@/lib/sanity-queries";
 import ResearchPageContent from "@/components/ResearchPageContent";
 
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 const defaultLogs = [
   {
     id: 1,

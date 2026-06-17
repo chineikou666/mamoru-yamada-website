@@ -5,7 +5,7 @@ import { getBuildings } from "@/lib/sanity-queries";
 import BuildingsView from "@/components/BuildingsView";
 
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 export default async function BuildingsPage({
   params,
 }: {
