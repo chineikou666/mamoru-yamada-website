@@ -3,6 +3,8 @@ import { type Locale } from "@/lib/i18n/config";
 import { getResearchLogs } from "@/lib/sanity-queries";
 import ResearchPageContent from "@/components/ResearchPageContent";
 
+
+export const revalidate = 60;
 const defaultLogs = [
   {
     id: 1,

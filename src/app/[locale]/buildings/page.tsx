@@ -4,6 +4,8 @@ import { buildings } from "@/lib/data/buildings";
 import { getBuildings } from "@/lib/sanity-queries";
 import BuildingsView from "@/components/BuildingsView";
 
+
+export const revalidate = 60;
 export default async function BuildingsPage({
   params,
 }: {
