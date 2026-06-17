@@ -13,7 +13,6 @@ export default defineType({
     defineField({ name: 'location', title: '所在地', type: 'string', validation: (Rule) => Rule.required() }),
     defineField({ name: 'locationEn', title: 'Location (English)', type: 'string' }),
     defineField({ name: 'region', title: '地域', type: 'string', options: { list: [
-      { title: '北海道', value: 'hokkaido' }, { title: '東北', value: 'tohoku' },
       { title: '関東', value: 'kanto' }, { title: '中部', value: 'chubu' },
       { title: '近畿', value: 'kinki' }, { title: '中国', value: 'chugoku' },
       { title: '四国', value: 'shikoku' }, { title: '九州', value: 'kyushu' },

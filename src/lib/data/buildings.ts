@@ -36,12 +36,9 @@ export interface Building {
 
 export const regions = [
   { id: "all", label: "すべて", labelEn: "All" },
-  { id: "hokkaido", label: "北海道", labelEn: "Hokkaido" },
-  { id: "tohoku", label: "東北", labelEn: "Tohoku" },
   { id: "kanto", label: "関東", labelEn: "Kanto" },
   { id: "chubu", label: "中部", labelEn: "Chubu" },
   { id: "kinki", label: "近畿", labelEn: "Kinki" },
-  { id: "chugoku", label: "中国", labelEn: "Chugoku" },
   { id: "shikoku", label: "四国", labelEn: "Shikoku" },
   { id: "kyushu", label: "九州", labelEn: "Kyushu" },
 ] as const;
