@@ -84,7 +84,7 @@ export default async function StaffPage({
     const sanityStaff = await getStaff();
     if (sanityStaff && sanityStaff.length > 0) {
       const videoMembers = sanityStaff
-        .filter((s: any) => s.category === "video")
+        .filter((s: any) => s.category === "video" || s.category === "supervision")
         .map((s: any) => ({ name: s.name, role: s.role || "", roleEn: s.roleEn || "" }));
 
       const musicMembers = sanityStaff
