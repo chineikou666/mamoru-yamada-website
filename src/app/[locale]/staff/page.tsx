@@ -83,30 +83,28 @@ export default async function StaffPage({
   try {
     const sanityStaff = await getStaff();
     if (sanityStaff && sanityStaff.length > 0) {
-      const grouped: StaffByCategory = {};
+      const videoMembers = sanityStaff
+        .filter((s: any) => s.category === "video")
+        .map((s: any) => ({ name: s.name, role: s.role || "", roleEn: s.roleEn || "" }));
+
+      const musicMembers = sanityStaff
+        .filter((s: any) => s.category === "music")
+        .map((s: any) => ({ name: s.name, role: s.role || "", roleEn: s.roleEn || "" }));
+
+      const coopMembers = sanityStaff
+        .filter((s: any) => s.category === "cooperation")
+        .map((s: any) => ({ name: s.name, role: s.role || "協力", roleEn: s.roleEn || "Cooperation" }));
+
+      const grouped: { [cat: string]: { name: string; role?: string; roleEn?: string }[] } = {};
       for (const s of sanityStaff) {
-        const cat = s.category || "その他";
-        if (!grouped[cat]) grouped[cat] = [];
-        grouped[cat].push({ name: s.name, role: s.role, roleEn: s.roleEn });
-      }
-
-      const videoMembers = [
-        ...(grouped["supervision"] || []).map((s: any) => ({ name: s.name, role: s.role || "監修", roleEn: s.roleEn || "Supervision" })),
-        ...(grouped["video"] || []).map((s: any) => ({ name: s.name, role: s.role || "", roleEn: s.roleEn || "" })),
-      ];
-
-      const musicMembers = [
-        ...(grouped["music"] || []).map((s: any) => ({ name: s.name, role: s.role || "", roleEn: s.roleEn || "" })),
-      ];
-
-      const coopMembers = grouped["cooperation"] || [];
-
-      const customGroups: { category: string; members: { name: string; role?: string; roleEn?: string }[] }[] = [];
-      for (const [cat, members] of Object.entries(grouped)) {
-        if (!["supervision", "video", "music", "cooperation"].includes(cat)) {
-          customGroups.push({ category: cat, members });
+        if (s.category === "custom") {
+          const catName = s.customCategory || "その他";
+          if (!grouped[catName]) grouped[catName] = [];
+          grouped[catName].push({ name: s.name, role: s.role, roleEn: s.roleEn });
         }
       }
+
+      const customGroups = Object.entries(grouped).map(([category, members]) => ({ category, members }));
 
       staffData = {
         videoTeam: {
@@ -121,7 +119,7 @@ export default async function StaffPage({
           supervisor: musicMembers.filter((m: any) => m.role?.includes("監修") || m.role?.includes("音楽監修")),
           members: musicMembers.filter((m: any) => !m.role?.includes("監修")),
         },
-        cooperation: coopMembers.map((m: any) => ({ name: m.name, role: m.role || "協力", roleEn: m.roleEn || "Cooperation" })),
+        cooperation: coopMembers,
         partnerOrgs: defaultStaffData.partnerOrgs,
         customGroups,
       };
