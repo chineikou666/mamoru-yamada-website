@@ -9,7 +9,7 @@ export default defineType({
     defineField({ name: 'nameEn', title: 'Name (English)', type: 'string' }),
     defineField({ name: 'role', title: '役職', type: 'string' }),
     defineField({ name: 'roleEn', title: 'Role (English)', type: 'string' }),
-    defineField({ name: 'category', title: 'カテゴリ', type: 'string', options: { list: [{ title: '監修', value: 'supervision' }, { title: '映像制作', value: 'video' }, { title: '音楽制作', value: 'music' }, { title: '協力', value: 'cooperation' }] } }),
+    defineField({ name: 'category', title: 'カテゴリ', type: 'string', description: '既存のカテゴリを選択するか、新しいカテゴリ名を入力してください' }),
     defineField({ name: 'order', title: '表示順', type: 'number' }),
   ],
   preview: {
