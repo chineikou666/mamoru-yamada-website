@@ -33,6 +33,7 @@ interface StaffPageContentProps {
     };
     cooperation: StaffMember[];
     partnerOrgs: StaffMember[];
+    customGroups?: { category: string; members: StaffMember[] }[];
   };
 }
 
@@ -182,6 +183,33 @@ export default function StaffPageContent({
             </div>
           </section>
         </FadeInView>
+
+        {/* Custom categories from Sanity */}
+        {staffData.customGroups && staffData.customGroups.length > 0 && (
+          <FadeInView delay={0.4}>
+            <section className="mb-12">
+              {staffData.customGroups.map((group, gi) => (
+                <div key={gi} className="mb-10">
+                  <h2 className="text-sm font-light text-[var(--color-foreground)] tracking-[0.1em] mb-4">
+                    {group.category}
+                  </h2>
+                  <div className="space-y-2">
+                    {group.members.map((member, mi) => (
+                      <div key={mi} className="flex justify-between items-baseline text-sm">
+                        <span className="text-[var(--color-foreground)]">{member.name}</span>
+                        {member.role && (
+                          <span className="text-[10px] text-[var(--color-muted-foreground)]">
+                            {locale === "ja" ? member.role : member.roleEn}
+                          </span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </section>
+          </FadeInView>
+        )}
       </div>
     </div>
   );

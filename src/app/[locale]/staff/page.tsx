@@ -3,8 +3,6 @@ import { type Locale } from "@/lib/i18n/config";
 import { getStaff } from "@/lib/sanity-queries";
 import StaffPageContent from "@/components/StaffPageContent";
 
-
-export const revalidate = 60;
 const defaultStaffData = {
   videoTeam: {
     supervisor: [
@@ -65,7 +63,12 @@ const defaultStaffData = {
     { name: "スルガベイカレッジ静岡オフィス", role: "協力単位", roleEn: "Partner Unit" },
     { name: "東海大学 学園史資料センター", role: "協力単位", roleEn: "Partner Unit" },
   ],
+  customGroups: [] as { category: string; members: { name: string; role?: string; roleEn?: string }[] }[],
 };
+
+interface StaffByCategory {
+  [category: string]: { name: string; role?: string; roleEn?: string }[];
+}
 
 export default async function StaffPage({
   params,
@@ -80,29 +83,47 @@ export default async function StaffPage({
   try {
     const sanityStaff = await getStaff();
     if (sanityStaff && sanityStaff.length > 0) {
-      const supervisors = sanityStaff.filter((s: any) => s.category === "supervision");
-      const videoMembers = sanityStaff.filter((s: any) => s.category === "video" && !s.role);
-      const videoSupport = sanityStaff.filter((s: any) => s.category === "video" && s.role);
-      const musicMembers = sanityStaff.filter((s: any) => s.category === "music" && !s.role);
-      const musicSupervisors = sanityStaff.filter((s: any) => s.category === "music" && s.role?.includes("監修"));
-      const musicSolo = sanityStaff.filter((s: any) => s.category === "music" && s.role && !s.role.includes("監修"));
-      const coop = sanityStaff.filter((s: any) => s.category === "cooperation");
+      const grouped: StaffByCategory = {};
+      for (const s of sanityStaff) {
+        const cat = s.category || "その他";
+        if (!grouped[cat]) grouped[cat] = [];
+        grouped[cat].push({ name: s.name, role: s.role, roleEn: s.roleEn });
+      }
+
+      const videoMembers = [
+        ...(grouped["supervision"] || []).map((s: any) => ({ name: s.name, role: s.role || "監修", roleEn: s.roleEn || "Supervision" })),
+        ...(grouped["video"] || []).map((s: any) => ({ name: s.name, role: s.role || "", roleEn: s.roleEn || "" })),
+      ];
+
+      const musicMembers = [
+        ...(grouped["music"] || []).map((s: any) => ({ name: s.name, role: s.role || "", roleEn: s.roleEn || "" })),
+      ];
+
+      const coopMembers = grouped["cooperation"] || [];
+
+      const customGroups: { category: string; members: { name: string; role?: string; roleEn?: string }[] }[] = [];
+      for (const [cat, members] of Object.entries(grouped)) {
+        if (!["supervision", "video", "music", "cooperation"].includes(cat)) {
+          customGroups.push({ category: cat, members });
+        }
+      }
 
       staffData = {
         videoTeam: {
-          supervisor: supervisors.map((s: any) => ({ name: s.name, role: s.role || "監修", roleEn: s.roleEn || "Supervision" })),
-          members: videoMembers.map((s: any) => ({ name: s.name })),
-          support: videoSupport.filter((s: any) => s.role?.includes("サポート")).map((s: any) => ({ name: s.name, role: s.role, roleEn: s.roleEn })),
-          calligraphy: videoSupport.filter((s: any) => s.role?.includes("題字")).map((s: any) => ({ name: s.name, role: s.role, roleEn: s.roleEn })),
+          supervisor: videoMembers.filter((m: any) => m.role?.includes("監修")),
+          members: videoMembers.filter((m: any) => !m.role || (!m.role.includes("監修") && !m.role.includes("サポート") && !m.role.includes("題字"))),
+          support: videoMembers.filter((m: any) => m.role?.includes("サポート")),
+          calligraphy: videoMembers.filter((m: any) => m.role?.includes("題字")),
         },
         musicTeam: {
           title: defaultStaffData.musicTeam.title,
           titleEn: defaultStaffData.musicTeam.titleEn,
-          supervisor: musicSupervisors.map((s: any) => ({ name: s.name, role: s.role, roleEn: s.roleEn })),
-          members: musicSolo.map((s: any) => ({ name: s.name, role: s.role || "", roleEn: s.roleEn || "" })),
+          supervisor: musicMembers.filter((m: any) => m.role?.includes("監修") || m.role?.includes("音楽監修")),
+          members: musicMembers.filter((m: any) => !m.role?.includes("監修")),
         },
-        cooperation: coop.map((s: any) => ({ name: s.name, role: s.role || "協力", roleEn: s.roleEn || "Cooperation" })),
+        cooperation: coopMembers.map((m: any) => ({ name: m.name, role: m.role || "協力", roleEn: m.roleEn || "Cooperation" })),
         partnerOrgs: defaultStaffData.partnerOrgs,
+        customGroups,
       };
     }
   } catch (e) {
