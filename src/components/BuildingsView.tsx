@@ -137,20 +137,34 @@ export default function BuildingsView({
               >
                 <Link href={`/${locale}/buildings/${building.id}`}>
                   <div className="group">
-                    <div className="aspect-[4/3] bg-[var(--color-muted)] rounded-lg overflow-hidden mb-4">
+                    <div className="aspect-[4/3] bg-[var(--color-muted)] rounded-lg overflow-hidden mb-4 flex flex-col items-center justify-center relative">
                       {building.image ? (
-                        <img
-                          src={building.image}
-                          alt={locale === "ja" ? building.title : building.titleEn}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
+                        <>
+                          <img
+                            src={building.image}
+                            alt={locale === "ja" ? building.title : building.titleEn}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 absolute inset-0"
+                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden'); }}
+                          />
+                          <div className="hidden flex-col items-center justify-center p-4 text-center">
+                            <span className="text-sm md:text-base font-light text-[var(--color-foreground)] tracking-wider leading-relaxed">
+                              {locale === "ja" ? building.title : building.titleEn}
+                            </span>
+                            <span className="text-[10px] text-[var(--color-muted-foreground)] mt-1">
+                              {locale === "ja" ? building.location : building.locationEn}
+                            </span>
+                          </div>
+                        </>
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-[var(--color-primary)]/20 to-[var(--color-secondary)]/20" />
+                        <div className="flex flex-col items-center justify-center p-4 text-center">
+                          <span className="text-sm md:text-base font-light text-[var(--color-foreground)] tracking-wider leading-relaxed">
+                            {locale === "ja" ? building.title : building.titleEn}
+                          </span>
+                          <span className="text-[10px] text-[var(--color-muted-foreground)] mt-1">
+                            {locale === "ja" ? building.location : building.locationEn}
+                          </span>
+                        </div>
                       )}
-                      <span className="text-[var(--color-border)]">|</span>
-                      <span className="text-xs text-[var(--color-muted-foreground)]">
-                        {locale === "ja" ? building.location : building.locationEn}
-                      </span>
                     </div>
                     <h3 className="text-base font-light text-[var(--color-foreground)] mb-1 group-hover:text-[var(--color-primary)] transition-colors">
                       {locale === "ja" ? building.title : building.titleEn}

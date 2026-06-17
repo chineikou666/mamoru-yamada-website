@@ -64,7 +64,7 @@ export const buildings: Building[] = [
     lng: 139.2742266,
     status: "現存",
     statusEn: "Existing",
-    image: "/images/buildings/tokai-shonan.jpg",
+    image: "/images/buildings/tokai-shonan.webp",
     overview: "東海大学湘南キャンパスは、1962年から建設が開始された教育施設群です。山田守は、自然地形に沿った校舎配置と、光や風を取り込む設計によって、学びの場に新たな価値をもたらしました。このプロジェクトは山田守ドキュメンタリー映像制作の中心的な研究対象です。",
     overviewEn: "Tokai University Shonan Campus is a group of educational facilities whose construction began in 1962. Mamoru Yamada brought new value to learning spaces through building arrangement along natural topography and design that incorporates light and wind. This project is the central research subject of the Mamoru Yamada documentary film production.",
     history: "東海大学の設立に関わり、設立後は東海大学工学部建設工学科教授として後進の育成にも尽力しました。特に湘南キャンパスでは、海を望む立地を活かした設計を追求しました。戦後は独立し、東海大学湘南キャンパスをはじめ、熊本・清水・代々木など、全国の東海大学関連施設の設計を多数手がけます。",
@@ -132,7 +132,7 @@ export const buildings: Building[] = [
     lng: 139.7004,
     status: "現存せず",
     statusEn: "No longer exists",
-    image: "/images/buildings/tokyo-hospital.jpg",
+    
     overview: "旧東京逓信病院は、1937年に完成した病院建築です。山田守は、患者の療養環境を最優先に考えた設計を提案しました。1939年公開の映画『暖流』（吉村公三郎監督）の舞台となりました。",
     overviewEn: "The Former Tokyo Telegraph Hospital is a hospital building completed in 1937. Mamoru Yamada proposed a design that prioritizes patients' healing environment. It became the setting for the 1939 film 'Danryu' (director Kozo Yoshimura).",
     history: "戦前の逓信省の病院として建設されました。1933年には逓信協会賞を受賞しています。戦後の日本の医療施設の近代化に影響を与えました。",
@@ -272,7 +272,7 @@ export const buildings: Building[] = [
     lng: 139.5519428,
     status: "現存",
     statusEn: "Existing",
-    image: "/images/buildings/nagasawa.jpg",
+    
     overview: "長沢浄水場は、1957年に建設された浄水場です。山田守のモダニズム建築の代表作の一つであり、DOCOMOMO JAPAN選定に選定されています。また、『ウルトラマン』のロケ地としても知られています。",
     overviewEn: "Nagasawa Water Purification Plant is a water purification facility built in 1957. It is one of Mamoru Yamada's representative modernist architecture works, selected as a DOCOMOMO JAPAN selection. It is also known as a filming location for Ultraman.",
   },
@@ -291,7 +291,7 @@ export const buildings: Building[] = [
     lng: 139.6852961,
     status: "現存",
     statusEn: "Existing",
-    image: "/images/buildings/tokai-yoyogi.jpg",
+    
     overview: "東海大学代々木校舎は、1955年から1962年にかけて建設された教育施設群です。山田守が設計し、東海大学の最初のキャンパスとして機能しました。",
     overviewEn: "Tokai University Yoyogi Campus is a group of educational facilities built from 1955 to 1962. Designed by Mamoru Yamada, it served as Tokai University's first campus.",
   },
@@ -310,7 +310,7 @@ export const buildings: Building[] = [
     lng: 139.7731,
     status: "現存せず",
     statusEn: "No longer exists",
-    image: "/images/buildings/tokyo-telegraph.jpg",
+    
     overview: "東京中央電信局は、1925年に完成した逓信建築の代表作です。パラボラ型アーチの並ぶ個性的なデザインで注目されました。現存しません。",
     overviewEn: "The Tokyo Central Telegraph Office is a representative work of communications architecture completed in 1925. It attracted attention for its distinctive design with parabolic arches. It no longer exists.",
   },
@@ -329,7 +329,7 @@ export const buildings: Building[] = [
     lng: 139.8046,
     status: "現存",
     statusEn: "Existing",
-    image: "/images/buildings/senju-post.jpg",
+    
     overview: "旧千住郵便局電話事務室は、1929年に完成した逓信建築です。DOCOMOMO JAPAN選定 日本におけるモダン・ムーブメントの建築に選定されています。",
     overviewEn: "The Former Senju Post Office Telephone Office is a communications architecture completed in 1929. It has been selected as a DOCOMOMO JAPAN selection of modern movement architecture in Japan.",
   },
@@ -348,7 +348,7 @@ export const buildings: Building[] = [
     lng: 139.7004,
     status: "現存せず",
     statusEn: "No longer exists",
-    image: "/images/buildings/tokyo-hospital.jpg",
+    
     overview: "旧東京逓信病院は、1937年に完成した病院建築です。1933年には逓信協会賞を受賞しています。1939年公開の映画『暖流』の舞台となりました。現存しません。",
     overviewEn: "The Former Tokyo Telegraph Hospital is a hospital building completed in 1937. It won the Communications Association Award in 1933. It became the setting for the 1939 film 'Danryu'. It no longer exists.",
   },
@@ -367,7 +367,7 @@ export const buildings: Building[] = [
     lng: 135.4881,
     status: "現存せず",
     statusEn: "No longer exists",
-    image: "/images/buildings/osaka-hospital.jpg",
+    
     overview: "旧大阪厚生年金病院は、1954年に完成した病院建築です。日本建築学会賞作品賞を受賞しました。現存しません。",
     overviewEn: "The Former Osaka Kosei Nenkin Hospital is a hospital building completed in 1954. It won the Architectural Institute of Japan Prize. It no longer exists.",
   },
@@ -386,7 +386,7 @@ export const buildings: Building[] = [
     lng: 139.6531,
     status: "現存せず",
     statusEn: "No longer exists",
-    image: "/images/buildings/jsdf-hospital.jpg",
+    
     overview: "自衛隊中央病院旧本館は、1955年に完成した病院建築です。現存しません。",
     overviewEn: "The Former JSDF Central Hospital Main Building is a hospital building completed in 1955. It no longer exists.",
   },
@@ -405,7 +405,7 @@ export const buildings: Building[] = [
     lng: 130.7079,
     status: "現存せず（2017年解体）",
     statusEn: "No longer exists (demolished 2017)",
-    image: "/images/buildings/kumamoto-hospital.jpg",
+    
     overview: "旧熊本逓信病院は、1955年に完成した病院建築です。DOCOMOMO JAPAN選定に選定されていましたが、2017年に解体されました。",
     overviewEn: "The Former Kumamoto Telegraph Hospital is a hospital building completed in 1955. It was selected as a DOCOMOMO JAPAN selection, but was demolished in 2017.",
   },
@@ -424,7 +424,7 @@ export const buildings: Building[] = [
     lng: 139.8744,
     status: "現存",
     statusEn: "Existing",
-    image: "/images/buildings/noda-museum.jpg",
+    
     overview: "野田市郷土博物館は、1959年に完成した博物館建築です。",
     overviewEn: "Noda City Museum is a museum building completed in 1959.",
   },
@@ -443,7 +443,7 @@ export const buildings: Building[] = [
     lng: 139.6427,
     status: "現存",
     statusEn: "Existing",
-    image: "/images/buildings/yokohama-hospital.jpg",
+    
     overview: "社会保険横浜中央病院は、1960年に完成した病院建築です。DOCOMOMO JAPAN選定に選定されています。",
     overviewEn: "Social Insurance Yokohama Central Hospital is a hospital building completed in 1960. It has been selected as a DOCOMOMO JAPAN selection.",
   },
@@ -462,7 +462,7 @@ export const buildings: Building[] = [
     lng: 134.0484,
     status: "現存",
     statusEn: "Existing",
-    image: "/images/buildings/takamatsu-hospital.jpg",
+    
     overview: "旧高松逓信病院は、1962年に完成した病院建築です。公共建築百選に選定されています。現在はオリーブ高松メディカルクリニックとして使用されています。",
     overviewEn: "The Former Takamatsu Telegraph Hospital is a hospital building completed in 1962. It was selected as one of the Best Public Buildings. It is now used as Olive Takamatsu Medical Clinic.",
   },
@@ -481,7 +481,7 @@ export const buildings: Building[] = [
     lng: 139.7514,
     status: "現存",
     statusEn: "Existing",
-    image: "/images/buildings/yamada-residence.jpg",
+    
     overview: "旧山田守自邸は、1959年に建築家自身が設計した邸宅です。現在は蔦サロン・珈琲店として利用されています。",
     overviewEn: "The Former Mamoru Yamada Residence is a residence designed by the architect himself in 1959. It is now used as Tsuta Salon & Coffee Shop.",
   },
