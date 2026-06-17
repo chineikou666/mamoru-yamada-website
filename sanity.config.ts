@@ -5,6 +5,7 @@ import building from "./sanity.schemaTypes/building";
 import researchLog from "./sanity.schemaTypes/researchLog";
 import staff from "./sanity.schemaTypes/staff";
 import project from "./sanity.schemaTypes/project";
+import siteContent from "./sanity.schemaTypes/siteContent";
 
 export default defineConfig({
   name: "mamoru-yamada",
@@ -13,6 +14,6 @@ export default defineConfig({
   dataset: "production",
   plugins: [structureTool(), visionTool()],
   schema: {
-    types: [building, researchLog, staff, project],
+    types: [building, researchLog, staff, project, siteContent],
   },
 });

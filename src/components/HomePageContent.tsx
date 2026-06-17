@@ -40,12 +40,25 @@ interface HomePageContentProps {
     };
   };
   featuredBuildings: FeaturedBuilding[];
+  latestLogs?: { date: string; title: string; titleEn: string }[];
+  siteContent?: {
+    heroTitle?: string;
+    heroSubtitle?: string;
+    heroDescription?: string;
+    heroCta?: string;
+    projectDescription?: string;
+    footerDescription?: string;
+    copyright?: string;
+    scheduleItems?: { date: string; event: string; eventEn: string }[];
+  } | null;
 }
 
 export default function HomePageContent({
   locale,
   dictionary,
   featuredBuildings,
+  latestLogs = [],
+  siteContent,
 }: HomePageContentProps) {
   const [isHeroHovered, setIsHeroHovered] = useState(false);
 
@@ -84,23 +97,23 @@ export default function HomePageContent({
             </p>
             
             <h1 className="text-[40px] sm:text-[56px] md:text-[96px] lg:text-[120px] xl:text-[140px] 2xl:text-[160px] font-extralight text-[var(--color-foreground)] tracking-[-0.02em] leading-[0.9] mb-3 sm:mb-5 md:mb-6">
-              {dictionary.home.title}
+              {siteContent?.heroTitle || dictionary.home.title}
             </h1>
             
             <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-[var(--color-muted-foreground)] tracking-[0.06em] md:tracking-[0.1em] mb-10 sm:mb-14 md:mb-24">
-              {dictionary.home.subtitle}
+              {siteContent?.heroSubtitle || dictionary.home.subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 sm:gap-8 md:gap-16">
               <p className="text-xs sm:text-sm md:text-lg text-[var(--color-muted-foreground)] leading-[2.2] md:leading-[2.6] tracking-[0.02em] md:tracking-[0.03em] max-w-2xl lg:max-w-3xl whitespace-pre-line" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
-                {dictionary.home.description}
+                {siteContent?.heroDescription || dictionary.home.description}
               </p>
 
               <Link
                 href={`/${locale}/buildings`}
                 className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base text-[var(--color-foreground)] hover:text-[var(--color-primary)] transition-colors group shrink-0"
               >
-                <span className="tracking-wider">{dictionary.home.cta}</span>
+                <span className="tracking-wider">{siteContent?.heroCta || dictionary.home.cta}</span>
                 <svg 
                   className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 transform group-hover:translate-x-1 transition-transform" 
                   fill="none" 
@@ -125,7 +138,7 @@ export default function HomePageContent({
                 {locale === "ja" ? "プロジェクト" : "Project"}
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-[var(--color-muted-foreground)] leading-[2] md:leading-[2.4] mb-12 md:mb-16 max-w-3xl whitespace-pre-line" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
-                {dictionary.home.projectDescription}
+                {siteContent?.projectDescription || dictionary.home.projectDescription}
               </p>
               
               <div>

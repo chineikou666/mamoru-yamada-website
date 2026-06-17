@@ -1,8 +1,9 @@
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { type Locale } from "@/lib/i18n/config";
+import { getResearchLogs } from "@/lib/sanity-queries";
 import ResearchPageContent from "@/components/ResearchPageContent";
 
-const researchLogs = [
+const defaultLogs = [
   {
     id: 1,
     title: "東海大学学園史資料センター見学",
@@ -86,7 +87,7 @@ const researchLogs = [
     title: "山田守建築 インタビュー取材",
     titleEn: "Interview on Mamoru Yamada Architecture",
     excerpt: "山田守建築のインタビュー取材を行いました。",
-    excerptEn: "Conducted interviews on Mamoru Yamada's architecture.",
+    excerptEn: "Conducted interviews on Mamoru Yamada architecture.",
     date: "2024-12",
     category: "インタビュー",
     categoryEn: "Interview",
@@ -102,6 +103,26 @@ export default async function ResearchPage({
   const { locale } = await params;
   const typedLocale = locale as Locale;
   const dictionary = await getDictionary(typedLocale);
+
+  let researchLogs = defaultLogs;
+  try {
+    const sanityLogs = await getResearchLogs();
+    if (sanityLogs && sanityLogs.length > 0) {
+      researchLogs = sanityLogs.map((l: any, i: number) => ({
+        id: i + 1,
+        title: l.title || "",
+        titleEn: l.titleEn || "",
+        excerpt: l.excerpt || "",
+        excerptEn: l.excerptEn || "",
+        date: l.date || "",
+        category: l.category || "",
+        categoryEn: l.category || "",
+        images: [],
+      }));
+    }
+  } catch (e) {
+    // fallback
+  }
 
   return (
     <ResearchPageContent

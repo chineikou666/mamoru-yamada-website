@@ -1,9 +1,9 @@
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { type Locale } from "@/lib/i18n/config";
+import { getStaff } from "@/lib/sanity-queries";
 import StaffPageContent from "@/components/StaffPageContent";
 
-const staffData = {
-  // 映像制作团队
+const defaultStaffData = {
   videoTeam: {
     supervisor: [
       { name: "瀧 健太郎", role: "監修", roleEn: "Supervision" },
@@ -30,7 +30,6 @@ const staffData = {
       { name: "森川 満月", role: "題字", roleEn: "Calligraphy" },
     ],
   },
-  // 音乐团队
   musicTeam: {
     title: "山田守ドキュメンタリ映画<br/>音楽制作チームのクレジット",
     titleEn: "Mamoru Yamada Documentary Film<br/>Music Production Team Credits",
@@ -53,13 +52,11 @@ const staffData = {
       { name: "伊藤 詩織", role: "音楽録音アシスト", roleEn: "Recording Assistant" },
     ],
   },
-  // 协力
   cooperation: [
     { name: "渡邉 研司", role: "協力", roleEn: "Cooperation" },
     { name: "大宮司 勝弘", role: "協力", roleEn: "Cooperation" },
     { name: "新井 啓之", role: "協力", roleEn: "Cooperation" },
   ],
-  // 协力机构
   partnerOrgs: [
     { name: "東海大学静岡カレッジオフィス", role: "協力単位", roleEn: "Partner Unit" },
     { name: "東海大学海洋学部博物館", role: "協力単位", roleEn: "Partner Unit" },
@@ -76,6 +73,39 @@ export default async function StaffPage({
   const { locale } = await params;
   const typedLocale = locale as Locale;
   const dictionary = await getDictionary(typedLocale);
+
+  let staffData = defaultStaffData;
+  try {
+    const sanityStaff = await getStaff();
+    if (sanityStaff && sanityStaff.length > 0) {
+      const supervisors = sanityStaff.filter((s: any) => s.category === "supervision");
+      const videoMembers = sanityStaff.filter((s: any) => s.category === "video" && !s.role);
+      const videoSupport = sanityStaff.filter((s: any) => s.category === "video" && s.role);
+      const musicMembers = sanityStaff.filter((s: any) => s.category === "music" && !s.role);
+      const musicSupervisors = sanityStaff.filter((s: any) => s.category === "music" && s.role?.includes("監修"));
+      const musicSolo = sanityStaff.filter((s: any) => s.category === "music" && s.role && !s.role.includes("監修"));
+      const coop = sanityStaff.filter((s: any) => s.category === "cooperation");
+
+      staffData = {
+        videoTeam: {
+          supervisor: supervisors.map((s: any) => ({ name: s.name, role: s.role || "監修", roleEn: s.roleEn || "Supervision" })),
+          members: videoMembers.map((s: any) => ({ name: s.name })),
+          support: videoSupport.filter((s: any) => s.role?.includes("サポート")).map((s: any) => ({ name: s.name, role: s.role, roleEn: s.roleEn })),
+          calligraphy: videoSupport.filter((s: any) => s.role?.includes("題字")).map((s: any) => ({ name: s.name, role: s.role, roleEn: s.roleEn })),
+        },
+        musicTeam: {
+          title: defaultStaffData.musicTeam.title,
+          titleEn: defaultStaffData.musicTeam.titleEn,
+          supervisor: musicSupervisors.map((s: any) => ({ name: s.name, role: s.role, roleEn: s.roleEn })),
+          members: musicSolo.map((s: any) => ({ name: s.name, role: s.role || "", roleEn: s.roleEn || "" })),
+        },
+        cooperation: coop.map((s: any) => ({ name: s.name, role: s.role || "協力", roleEn: s.roleEn || "Cooperation" })),
+        partnerOrgs: defaultStaffData.partnerOrgs,
+      };
+    }
+  } catch (e) {
+    // fallback
+  }
 
   return (
     <StaffPageContent
